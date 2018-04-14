@@ -1,4 +1,4 @@
-def evenFibonacci(ceiling):
+def even_fibonacci(ceiling):
     first = 1
     second = 2
     sum = 0
@@ -11,5 +11,5 @@ def evenFibonacci(ceiling):
         second = first + second
     print(sum)
 
-evenFibonacci(4000000)
+even_fibonacci(4000000)
 
