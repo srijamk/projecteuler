@@ -1,20 +1,14 @@
-def is_prime(num):
-    for i in range(2, num / 2 + 1):
-        if num % i == 0:
-            return False
-    return True
-
-
 def largest_prime_factor(num):
-    result = 0
-    for i in range(2, num / 2):
-        print(i)
-        if is_prime(i) and num % i == 0:
-            print(i)
-            result = i
-    return result
+    prime_list = []
+    factor = 2
+    while factor <= num:
+        if num % factor == 0:
+            prime_list.append(factor)
+            # Formerly the program decreased the value of factor
+            # But it should have instead decreased the value of n
+            num = num // factor
+        else:
+            factor += 1
+    return max(prime_list)
 
-
-print(is_prime(2))
-
-print(largest_prime_factor(600851475143))
+print largest_prime_factor(600851475143)
